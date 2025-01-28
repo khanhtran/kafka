@@ -23,13 +23,14 @@ public class MessageService {
         this.kafkaTemplate = kafkaTemplate;
     }
 
-    public void sendMessage(String message) {
-        this.sendMessage(message, this.topic);
+    public CompletableFuture<SendResult<String, String>>  sendMessage(String message) {
+        return this.sendMessage(message, this.topic);
     }
 
-    public void sendMessage(String message, String topic) {
+    public CompletableFuture<SendResult<String, String>> sendMessage(String message, String topic) {
         CompletableFuture<SendResult<String, String>> future = kafkaTemplate.send(topic, message);
         future.whenComplete(this::handleSendResult);
+        return future;
     }
 
 

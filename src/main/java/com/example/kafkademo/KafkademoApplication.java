@@ -17,15 +17,9 @@ import org.springframework.scheduling.annotation.Scheduled;
 import java.time.LocalTime;
 
 @SpringBootApplication
-@EnableScheduling
 public class KafkademoApplication {
-
 	@Value("${application.topic}")
 	private String topic;
-
-	@Autowired
-	private MessageService messageService;
-
 
 	private static final Logger logger = LoggerFactory.getLogger(KafkademoApplication.class);
 
@@ -46,9 +40,5 @@ public class KafkademoApplication {
 		logger.info("message: {}", in);
 	}
 
-//	@Scheduled(fixedRate = 10000)
-//	public void send() {
-//		logger.info("Sending ");
-//		messageService.sendMessage(LocalTime.now().toString());
-//	}
+
 }

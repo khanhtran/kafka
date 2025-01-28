@@ -1,0 +1,13 @@
+-------------------------------------------------------------------------------
+Test set: com.example.kafkademo.MessageServiceIT
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 67.16 s <<< FAILURE! -- in com.example.kafkademo.MessageServiceIT
+com.example.kafkademo.MessageServiceIT.testSendMessage -- Time elapsed: 63.56 s <<< ERROR!
+java.lang.IllegalStateException: No records found for topic
+	at org.springframework.kafka.test.utils.KafkaTestUtils.getSingleRecord(KafkaTestUtils.java:181)
+	at org.springframework.kafka.test.utils.KafkaTestUtils.getSingleRecord(KafkaTestUtils.java:142)
+	at com.example.kafkademo.MessageServiceIT.testSendMessage(MessageServiceIT.java:57)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
